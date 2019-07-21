@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,10 +32,10 @@
                     <form class="user">
                       <div class="form-group">
                       	<h4>Select Highest Qualification</h4>
-                        <input type="checkbox" name="SSC" value="SSC">  SSC<br>
-                        <input type="checkbox" name="HSC" value="HSC">  HSC<br>
-                        <input type="checkbox" name="DIPLOMA" value="DIPLOMA">  DIPLOMA<br>
-                        <input type="checkbox" name="GRADUATE" value="GRADUATE">  GRADUATE<br>
+                        <input type="radio" name="HQ" value="SSC">  SSC<br>
+                        <input type="radio" name="HQ" value="HSC">  HSC<br>
+                        <input type="radio" name="HQ" value="DIPLOMA">  DIPLOMA<br>
+                        <input type="radio" name="HQ" value="GRADUATE">  GRADUATE<br>
                       </div>
                     
                       <style>
@@ -91,7 +93,7 @@
                     
                         <form>
                                <div class="dropdown1">
-                                        <button class="dropbtn">Stream</button> 
+                                        <button class="dropbtn">Stream</button> :
                                        
                                         <select id="hosting-plan">
                                                 <option value="ChooseOne">Choose One</option>
@@ -104,7 +106,7 @@
                         <br>
 
                         <div class="dropdown2">
-                                <button class="dropbtn1">Grade</button> 
+                                <button class="dropbtn1">Grade</button> :
                                 
                                 <select id="hosting-plan">
                                         <option value="ChooseOne">Choose One</option>
