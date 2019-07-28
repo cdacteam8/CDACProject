@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exam Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
+</head>
+<body style="background-image: linear-gradient( 109.6deg,  rgba(61,237,253,1) 44.2%, rgba(3,136,238,1) 95.6% );>
+    <div class=" fluid-container ">
+    
+     <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="position: sticky; top:0; z-index:1;">
+  <div class="container ">
+     <a class="navbar-brand" href="#">
+          <img src="images/logo.png" style="height: 50px;"  alt="logo">
+        </a> 
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+           <a class="nav-link" href="prep_login_form.htm">Home
+                <span class="sr-only">(current)</span>
+              </a>  
+        </li>
+        
+        <li class="nav-item">
+        <a class="nav-link"  href="logout.htm">Logout</a>
+        </li>
+       
+</div>
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+    
+    
+    
+      <!-- Outer Row -->
+      <div class="row">
+           <div class="col-xl-3 col-lg-3 col-md-3  "></div> 
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <!-- Card -->
+               <div class="card o-hidden border-0 shadow-lg my-5 justify-content-center">
+                 <div class="card-body p-0">
+                 <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12  d-flex justify-content-center">
+                        <div class="p-5">
+                            <div class="text-center">
+                            <h1>Exam Dashboard</h1>
+                            </div>
+                           <br>
+                            
+                     <form class="user">
+                      <div class="form-group">
+                      	<h4>Select Highest Qualification</h4>
+                        <input type="radio" name="HQ" value="SSC" id="SSC">  SSC<br>
+                        <input type="radio" name="HQ" value="HSC" id="HSC">  HSC<br>
+                        <input type="radio" name="HQ" value="DIPLOMA" id="DIPLOMA">  DIPLOMA<br>
+                        <input type="radio" name="HQ" value="GRADUATE" id="GRADUATE">  GRADUATE<br>
+                      </div> 
+                    
+                      <style>
+                        .dropbtn {
+                          background-color: #4CAF50;
+                          color: white;
+                          padding: 10px;
+                          font-size: 16px;
+                          border: none;
+                        }
+                        .dropbtn1 {
+                          background-color: #4CAF50;
+                          color: white;
+                          padding: 10px;
+                          font-size: 16px;
+                          border: none;
+                        }
+                        
+                        .dropdown1 {
+                          position: relative;
+                          display: inline-block;
+                        }
+                        .dropdown2 {
+                          position: relative;
+                          display: inline-block;
+                        }
+                        
+                        .dropdown-content {
+                          display: none;
+                          position: absolute;
+                          background-color: #f1f1f1;
+                          min-width: 160px;
+                          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                          z-index: 1;
+                        }
+                        
+                        .dropdown-content a {
+                          color: black;
+                          padding: 12px 16px;
+                          text-decoration: none;
+                          display: block;
+                        }
+                        
+                        .dropdown-content a:hover {background-color: #ddd;}
+                        
+                        .dropdown:hover .dropdown-content {display: block;}
+                        
+                        .dropdown:hover .dropbtn {background-color: #3e8e41;}
+                        </style>
+                        </head>
+                        <body>
+                        
+                    
+                        <form>
+                               <div class="dropdown1">
+                                        <button class="dropbtn">Stream</button> :
+                                       
+                                        <select id="HSC">
+                                                <option value="ChooseOne">Choose One</option>
+                                              <option value="Science">Science</option>
+                                              <option value="Commerce">Commerce</option>
+                                              <option value="Arts">Arts</option>
+                                        </select>
+                                </div>
+                                
+                                
+                                  <div class="dropdown2">
+                                        <button class="dropbtn">Stream</button> :
+                                       
+                                        <select id="GRADUATE">
+                                                <option value="ChooseOne">Choose One</option>
+                                              <option value="Science">jksdhf</option>
+                                              <option value="Commerce">sdasd</option>
+                                              <option value="Arts">sdasd</option>
+                                        </select>
+                                </div>
+                                
+                                
+                                
+                        <br>
+                        <br>
+
+                        <div class="dropdown2">
+                                <button class="dropbtn1">Grade</button> :
+                                
+                                <select id="hosting-plan">
+                                        <option value="ChooseOne">Choose One</option>
+                                      <option value="Distinction(Above 75%)">Distinction(Above 75%)</option>
+                                      <option value="First Class(60%-75%)">First Class(60%-75%)</option>
+                                      <option value="Second Class(Below 60%)">Second Class(Below 60%)</option>
+                                </select>
+                        </div>
+                    </form>
+                    
+                    
+ 
+                    
+                              <br>
+                              <br>
+
+                             
+
+                             
+                      <a href="eligibleExams.jsp" class="btn btn-primary btn-user" style="margin-left: 100px">
+                        Submit
+                      </a>
+                      
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-3 "></div> 
+      </div>
+    </div>
+</body>
+</html>
