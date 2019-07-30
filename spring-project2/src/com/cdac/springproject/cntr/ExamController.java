@@ -1,0 +1,137 @@
+package com.cdac.springproject.cntr;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.cdac.springproject.dto.Diploma;
+import com.cdac.springproject.dto.ExamMaster;
+import com.cdac.springproject.dto.HSC;
+import com.cdac.springproject.dto.SSC;
+
+import com.cdac.springproject.serv.ExamService;
+
+@Controller
+public class ExamController {
+	@Autowired
+	private ExamService examService;
+
+	@RequestMapping(value = "/exam.htm")
+	public String examregister(ExamMaster exam, ModelMap model, HSC examhsc, Diploma examDiploma, SSC examSSC) {
+
+		if (examhsc.getCriteria().equals("HSC")) {
+			examService.createExamHSC(examhsc);
+			model.put("exam", new HSC());
+			return "adminDashboard";
+		} else if (exam.getCriteria().equals("Graduation")) {
+			examService.createExam(exam);
+			model.put("exam", new ExamMaster());
+			return "adminDashboard";
+		} else if (examSSC.getCriteria().equals("SSC")) {
+			examService.createExamSSC(examSSC);
+			model.put("exam", new SSC());
+			return "adminDashboard";
+		} else {
+			examService.createExamDiploma(examDiploma);
+			model.put("exam", new Diploma());
+			return "adminDashBoard";
+		}
+	}
+
+	@RequestMapping(value = "/exam_list.htm")
+	public String examList(ModelMap model) {
+		List<ExamMaster> examlist = examService.selectAllExam();
+		model.put("el", examlist);
+		return "examlist";
+	}
+
+	@RequestMapping(value = "/exam_listhsc.htm")
+	public String examListhsc(ModelMap model) {
+		List<HSC> examlist = examService.selectAllExamHSC();
+		model.put("el", examlist);
+		return "adminhsc";
+	}
+
+	@RequestMapping(value = "/exam_listssc.htm")
+	public String examListssc(ModelMap model) {
+		List<SSC> examlist = examService.selectAllExamSSC();
+		model.put("el", examlist);
+		return "adminssc";
+	}
+
+	@RequestMapping(value = "/exam_listdiploma.htm")
+	public String examListDiploma(ModelMap model) {
+		List<Diploma> examlist = examService.selectAllExamDiploma();
+		model.put("el", examlist);
+		return "admindiploma";
+	}
+
+	@RequestMapping(value = "/select_examlist.htm")
+	public String examSelect(ModelMap model) {
+		return "selectexam";
+	}
+
+	@RequestMapping(value = "/delete_exam.htm")
+	public String deleteExam(@RequestParam int examId, ModelMap model) {
+		examService.removeExam(examId);
+		List<ExamMaster> elist = examService.selectAllExam();
+		model.put("el", elist);
+		return "examlist";
+	}
+
+	@RequestMapping(value = "/delete_examssc.htm")
+	public String deleteExamHSC(@RequestParam int examId, ModelMap model) {
+		examService.removeExamSSC(examId);
+		List<SSC> elist = examService.selectAllExamSSC();
+		model.put("el", elist);
+		return "adminssc";
+	}
+
+	@RequestMapping(value = "/delete_examhsc.htm")
+	public String deleteExamSSC(@RequestParam int examId, ModelMap model) {
+		examService.removeExamHSC(examId);
+		List<HSC> elist = examService.selectAllExamHSC();
+		model.put("el", elist);
+		return "adminhsc";
+	}
+
+	@RequestMapping(value = "/delete_examdiploma.htm")
+	public String deleteExamDiploma(@RequestParam int examId, ModelMap model) {
+		examService.removeExamDiploma(examId);
+		List<Diploma> elist = examService.selectAllExamDiploma();
+		model.put("el", elist);
+		return "admindiploma";
+	}
+
+	@RequestMapping(value = "/filter_list.htm")
+	public String examFilter(ModelMap model, @RequestParam("highedu") String highedu) {
+
+		if (highedu.equals("HSC")) {
+			List<HSC> examlist = examService.selectAllExamHSC();
+			model.put("el", examlist);
+			return "filterlisthsc";
+		}
+
+		else if (highedu.equals("SSC")) {
+			List<SSC> examlist = examService.selectAllExamSSC();
+			model.put("el", examlist);
+			return "filterlistssc";
+		} else if (highedu.equals("Diploma")) {
+			List<Diploma> examlist = examService.selectAllExamDiploma();
+			model.put("el", examlist);
+			return "filterlistdiploma";
+		} else {
+
+			List<ExamMaster> examlist = examService.selectAllExam();
+
+			model.put("el", examlist);
+			return "filterlist";
+		}
+
+	}
+
+}
